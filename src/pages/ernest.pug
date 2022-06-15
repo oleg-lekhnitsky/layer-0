@@ -4,68 +4,29 @@ block meta
   +meta(title="Layer 0", description="Шаблон сайта проектов Интуиции", og-image="/images/IMG_0202.jpg")
 
 block content
-  
-  .ids__wrapper
-    .ids__text
-    
-      section
-        p #[mark Это главная страница — можно удалить текст и делать свою]
-
-        .ids__stack.M
-
-        h1 Ernest
-        p Layer 0 — это шаблон проектов Интуиции. В основе шаблонизатор #[a(href='https://pugjs.org/api/getting-started.html') Pug] для html-разметки, #[a(href='https://sass-lang.com/documentation/syntax#scss') SCSS] для css-стилей, #[a(href='https://jquery.com') jQuery] для яваскрипта. Есть набор готовых компонентов сайта в виде css-фреймворка — #[a(href='/design-system') дизайн-системы].
-
-        .ids__stack.XS
-        h2 #[a(href='/design-system') Дизайн-система]
-        p Посмотреть перечень компонентов
-
-        .ids__stack.XS
-        h2 Куда класть картинки
-        p Картинки кладём в папку #[code /static/images/]. Адреса картинок будут начинаться с #[code /images/], например:
-        aside
-          code img(src="/images/poster.jpg")
-
-        .ids__stack.XS
-        h2 Куда класть шрифты
-
-        p Файлы шрифтов кладём в папку #[code /static/fonts/], а потом подставляем название шрифта и имя файла из папки внутри файла #[code /styles/base/_fonts.scss] в миксин:
-        aside
-          code #{`@include font-face('Open Sans', 'open-sans-regular');`}
+  .tmp-with-sidebar-ernest
+    .tmp-sidebar-menu
+      
         
-        p Миксин выглядит так:
-        aside
-          code #{`font-face($family, $path, $weight: normal, $style: normal)`}
-        p #[code $family] — имя шрифтовой семьи, будет использоваться внутри css-стилей, чтобы включить нужный шрифт. #[code font-family: 'Open Sans';]
-        p #[code $path] — имя файла из папки #[code /static/fonts/] без расширения. Одновременно подключаться все расширения. #[i хз как написать]
-        p #[code $weight] — жирность шрифта. По умолчанию #[code normal]. Для двух начертаний можно указать #[code normal] и #[code bold]. #[code font-weight: bold;] 
-        p Если начертаний больше двух, использовать цифры, например: 100, 200, 400. #[code font-weight: 400;] 
-        p #[code $style] — наклон шрифта, normal и italic. По умолчанию #[code normal]. #[code font-style: italic;]
+          a(href="https://intuition.team/") Services
+         
+          a(href="https://intuition.team/") Prices
+        
+          a(href="https://intuition.team/") Portfolio
+        
+          a(href="https://intuition.team/") Contacts
+        
+  
+    section 
+      h1 Ernest Makarenko — nice guy
+      figure  
 
-        .ids__stack.L
-        a.ids__button-link(href="/design-system").XXS жми сюда
-        figure   
-          img(src="/images/arrow.svg", alt="asfa")
-  figure   
     video(style={width: '100%', margin: '0 0 0 0 '} src="https://dl.dropboxusercontent.com/s/99l9tmal0lx10jm/allur_fin_eng.mp4?dl=0" autoplay, muted, loop, preload: 'auto') 
-    figcaption what a video  
-
-  h1 Tap!
-  aside
-    p Я пришёл на встречу с главным инженером, чтобы обсудить всякие детали — мы уже довольно долго искали баланс между желаниями и возможностями, вроде что-то нащупывалось, решили ускорить процесс и обсудить лично.
-  .ids__grid.M.ids__grid-inset-S
-    .ids__grid-cell
-      
-      
-    .ids__grid-cell
-      figure.s
-        img(src="/images/frame 217.png", alt="asfa") 
-        figcaption Mystical scene of a cabin on a hill. ©Julian Steenbergen
-
-    .ids__grid-cell
-      img(src="/images/frame 217.png", alt="asfa") 
-    .ids__grid-cell
-       img(style={transform: 'rotate(-5deg)', margin: '90% 0 0 0 '} src="/images/arrow.svg", alt="asfa")  
-    .ids__grid-cell
-       a.ids__button-link(href="/design-system").s жми сюда
+  
+  
+    p Pocket Rocket Agency
+    h1 Tap!
+    aside
+      p Я пришёл на встречу с главным инженером, чтобы обсудить всякие детали — мы уже довольно долго искали баланс между желаниями и возможностями, вроде что-то нащупывалось, решили ускорить процесс и обсудить лично.
+    
     

@@ -79,6 +79,33 @@
     margin-bottom: calc(var(--ids__density) * 0.4em);
   }
 
+  p.cover {
+    color: rgba(var(--ids__text-on-cover-RGB), 1);
+  }
+
+  p.message {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: calc(var(--ids__density) * 0.4em);
+    background-color: rgba(var(--ids__surface-RGB), 1);
+    padding: 0.3em 0.6em 0.4em;
+    border-radius: 0 1em 1em 1em;
+    margin-bottom: 0.3em;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.13);
+  }
+
+  h1.block {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: calc(var(--ids__density) * 0.4em);
+    background-color: rgba(var(--ids__surface-RGB), 1);
+    padding: 4em 4em 4em 0.5em;
+    //border-radius: 2em;
+    margin-bottom: 0.3em;
+
+    //box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.13);
+  }
+
   .ids__lead {
     font-size: 1.2em;
     font-weight: 500;
@@ -105,6 +132,12 @@
       background: none;
       box-shadow: inset 0 -0.15em RGB(var(--ids__background-RGB)),
         inset 0 -0.5em RGB(var(--ids__mark-RGB));
+    }
+    mark.cover {
+      background: none;
+      color: rgba(var(--ids__text-on-cover-RGB), 1);
+      box-shadow: none;
+      text-decoration: underline;
     }
   }
 
@@ -265,10 +298,17 @@
   }
 
   details {
+    display: inline-block;
     padding: 0.5em;
     cursor: pointer;
-    // border: 1px solid rgba(var(--ids__text-RGB), 0.1);
-    border-radius: $ids__radius;
+    border: 1px solid rgba(var(--ids__text-RGB), 1);
+    //border-radius: $ids__radius;
+    border-radius: calc(#{$ids__radius} * 3);
+    transition: all 0.05s ease-out;
+
+    &:hover {
+      background-color: rgba(var(--ids__hover-RGB), 1);
+    }
 
     summary {
       padding-bottom: $ids__micro-padding;
@@ -305,5 +345,39 @@
     &.ids__label-S {
       font-size: 0.9em;
     }
+  }
+}
+h1.cover {
+  color: rgba(var(--ids__text-on-cover-RGB), 1);
+  font-size: var(--step-3);
+  line-height: calc(var(--ids__density) / 1.3);
+  margin-bottom: 0.4em;
+}
+
+section.img {
+  margin: 0;
+  background-color: black;
+  background-image: url('/images/logo3d.png');
+  background-size: cover;
+  background-position: right;
+  background-size: contain;
+  background-repeat: no-repeat;
+  //background-size: 40%;
+  background-origin: padding-box;
+  //background-image: linear-gradient(105deg, #ff6400 0%, #ff4600 55%, #323232 68%, #1e1e1e 100%);
+  padding: 0em 2em 3em 2em;
+  //border-radius: calc(#{$ids__radius} * 3);
+
+  @media screen and #{$ids__mobile} {
+    background-color: black;
+    background-image: url('/images/logo3d.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    //background-size: 150%;
+    background-origin: border-box;
+    //background-image: linear-gradient(105deg, #ff6400 0%, #ff4600 55%, #323232 68%, #1e1e1e 100%);
+    padding: 2em 2em 1em 1em;
+    //border-radius: calc(#{$ids__radius} * 3);
   }
 }

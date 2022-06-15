@@ -1,3 +1,7 @@
+video {
+  border-radius: 1rem;
+}
+
 .tmp-with-sidebar {
   margin-left: 23%;
 
@@ -12,6 +16,11 @@
   text-align: right;
   width: fit-content;
   max-width: 23%;
+}
+
+.tmp-section-intro {
+  color: black;
+  background-color: black;
 }
 
 .tmp-section-title {

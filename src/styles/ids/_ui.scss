@@ -34,7 +34,8 @@
     border: 0;
     background-color: RGB(var(--ids__accent-RGB));
     color: RGB(var(--ids__on-accent-RGB));
-    border-radius: $ids__radius;
+    //border-radius: $ids__radius;
+    border-radius: calc(var(--ids__density) * 1em / 3);
     padding: calc(var(--ids__density) * 1em / 3) calc(var(--ids__density) * 1em)
       calc(var(--ids__density) * 1em / 2.5);
     line-height: var(--ids__density);

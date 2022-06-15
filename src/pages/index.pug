@@ -4,40 +4,125 @@ block meta
   +meta(title="Layer 0", description="Шаблон сайта проектов Интуиции", og-image="/images/IMG_0202.jpg")
 
 block content
-  .ids__wrapper
-    .ids__text
-      section
-        p #[mark Это главная страница — можно удалить текст и делать свою]
-
-        .ids__stack.M
-
-        h1 Новый сайт! 
-        p Layer 0 — это шаблон проектов Интуиции. В основе шаблонизатор #[a(href='https://pugjs.org/api/getting-started.html') Pug] для html-разметки, #[a(href='https://sass-lang.com/documentation/syntax#scss') SCSS] для css-стилей, #[a(href='https://jquery.com') jQuery] для яваскрипта. Есть набор готовых компонентов сайта в виде css-фреймворка — #[a(href='/design-system') дизайн-системы].
-
-        .ids__stack.XS
-        h2 #[a(href='/design-system') Дизайн-система]
-        p Посмотреть перечень компонентов
-
-        .ids__stack.XS
-        h2 Куда класть картинки
-        p Картинки кладём в папку #[code /static/images/]. Адреса картинок будут начинаться с #[code /images/], например:
-        aside
-          code img(src="/images/poster.jpg")
-
-        .ids__stack.XS
-        h2 Куда класть шрифты
-
-        p Файлы шрифтов кладём в папку #[code /static/fonts/], а потом подставляем название шрифта и имя файла из папки внутри файла #[code /styles/base/_fonts.scss] в миксин:
-        aside
-          code #{`@include font-face('Open Sans', 'open-sans-regular');`}
-        
-        p Миксин выглядит так:
-        aside
-          code #{`font-face($family, $path, $weight: normal, $style: normal)`}
-        p #[code $family] — имя шрифтовой семьи, будет использоваться внутри css-стилей, чтобы включить нужный шрифт. #[code font-family: 'Open Sans';]
-        p #[code $path] — имя файла из папки #[code /static/fonts/] без расширения. Одновременно подключаться все расширения. #[i хз как написать]
-        p #[code $weight] — жирность шрифта. По умолчанию #[code normal]. Для двух начертаний можно указать #[code normal] и #[code bold]. #[code font-weight: bold;] 
-        p Если начертаний больше двух, использовать цифры, например: 100, 200, 400. #[code font-weight: 400;] 
-        p #[code $style] — наклон шрифта, normal и italic. По умолчанию #[code normal]. #[code font-style: italic;]
-
+  .ids__wrapper.ids__edge-to-edge
+    section  
+    content
+    section.img
+    
+        .ids__stack.S
         .ids__stack.L
+        .ids__stack.L
+        h1.cover Pocket Rocket is an innovative branding agency. We  #[mark.cover help businesses grow  ] up to an extra 30% a year
+        .ids__stack.XS
+    section.img(style={color: 'black', background: 'rgba(255, 255, 255, 1)'})
+    
+        
+        
+        .ids__stack.L
+        h1.cover(style={color: 'black', background: 'rgba(255, 255, 255, 1)'}) We develop strategies, design identities and launch brands in IT, Fashion Tech, Telecom, Transport &&nbspRetail.
+        .ids__stack.M
+        
+    .ids__text
+    section 
+      .ids__grid.XL
+        .ids__grid-cell
+          h2 Our services
+          
+        .ids__grid-cell
+          h3 
+            details
+              summary Brand Strategy <br>Development
+              .ids__stack.XS
+              
+              h4 Market Research & Benchmarking
+              h4 Business & Product Research
+              h4 Brand Value Proposition
+              h4 Interviews
+              h4 Strategic Session
+              h4 Brand Platform & Strategy
+              h4 Communication Platform
+              h4 Design Session
+              h4 Employer Brand Strategy
+              h4 Focus Groups
+              h4 Brand Architecture
+        .ids__grid-cell
+          h4 Market Research & Benchmarking
+          h4 Business & Product Research
+          h4 Brand Value Proposition
+          h4 Interviews
+          h4 Strategic Session
+          h4 Brand Platform & Strategy
+          h4 Communication Platform
+          h4 Design Session
+          h4 Employer Brand Strategy
+          h4 Focus Groups
+          h4 Brand Architecture
+      .ids__grid.XL
+        .ids__grid-cell
+        .ids__grid-cell
+          h3
+            details
+              summary Brand <br>Development
+              .ids__stack.XS
+              h4 Logo Design
+              h4 Visual Identity
+              h4 Design System
+              h4 Typography, Imagery, Motion
+              h4 Guidelines & Brandbook
+              h4 Brand Implementation
+              h4 Naming
+        .ids__grid-cell
+          h4 Logo Design
+          h4 Visual Identity
+          h4 Design System
+          h4 Typography, Imagery, Motion
+          h4 Guidelines & Brandbook
+          h4 Brand Implementation
+          h4 Naming
+      .ids__grid.XL
+        .ids__grid-cell
+        .ids__grid-cell
+          h3 Employer Brand<br>Development
+        .ids__grid-cell
+          h4 Employer brand strategy
+          h4 Culture, EVP and employee experience
+          h4 Onboarding Toolkits
+      .ids__grid.XL
+        .ids__grid-cell
+        .ids__grid-cell
+          h3 Brand launch <br>& support
+        .ids__grid-cell
+          h4 New Brand Pitch
+          h4 Engaging & Onboarding Teams
+          h4 Art-direction
+          h4 Communication Design
+          h4 Motion & Film
+          h4 Digital product design
+          h4 Event design
+          h4 Environmental and retail design
+      .ids__stack.L
+  h2 And this is <br> how we do it
+  section 
+  .ids__grid.M.ids__grid-inset-M
+    .ids__grid-cell
+      h2 1
+      h4 Briefing
+      p Debrief, Set goals. Define Agency Task, Timing &&nbspBudget
+    .ids__grid-cell
+      h2 2 
+      h4 Research
+      p Research Market, Competitors, Clients, Employees, Business Processes to understand real environment
+    .ids__grid-cell
+      h2 3
+      h4 Strategy
+      p Develop Brand Essence, Brand Strategy and it's details
+    .ids__grid-cell
+      h2 4
+      h4 Design
+      p Develop visual &&nbspverbal communication
+    .ids__grid-cell
+      h2 5
+      h4 Engagement
+      p Engage & consult teams, deliver guides, support &&nbspart-direct
+  
+  img(src="images/poster.jpg", alt="")

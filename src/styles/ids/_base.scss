@@ -5,3 +5,11 @@
 img {
   border-radius: $ids__radius-XS;
 }
+
+img.full {
+  object-fit: cover;
+  position: absolute;
+  transform: rotate(-10deg);
+
+  z-index: -1;
+}

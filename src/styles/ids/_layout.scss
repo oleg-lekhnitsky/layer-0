@@ -19,9 +19,28 @@
       padding: 0 calc(var(--ids__density) * 0.6em);
     }
   }
+  &.ids__full-width.pocket {
+    width: 110%;
+    padding: 0 calc(var(--ids__density) * 0.01em);
+
+    @media screen and #{$ids__mobile} {
+      padding: 0 calc(var(--ids__density) * 0.6em);
+    }
+  }
+  &.ids__full-width__intro {
+    width: 100%;
+    padding: 0 calc(var(--ids__density) * 0.75em);
+
+    @media screen and #{$ids__mobile} {
+      padding: 0 calc(var(--ids__density) * 0.6em);
+    }
+  }
 
   &.ids__edge-to-edge {
     width: 100%;
+    @media screen and #{$ids__mobile} {
+      padding: 0;
+    }
   }
 
   &.ids__shift-right {
