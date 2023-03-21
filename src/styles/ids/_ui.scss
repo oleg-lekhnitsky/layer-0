@@ -40,6 +40,7 @@
       calc(var(--ids__density) * 1em / 2.5);
     line-height: var(--ids__density);
     white-space: nowrap;
+    transition: all 300ms ease-out;
     cursor: pointer;
 
     &.XS,
@@ -73,7 +74,9 @@
     &.XL,
     &.size-XL {
       //LEGACY NAME
+      width: 100%;
       font-size: 2.5em;
+      text-align: center;
       padding: calc(var(--ids__density) * 1em / 5)
         calc(var(--ids__density) * 1em / 1.5)
         calc(var(--ids__density) * 1em / 4);
@@ -81,6 +84,7 @@
 
     &:hover {
       background-color: rgba(var(--ids__accent-RGB), 0.8);
+      transition: all 50ms ease-in;
     }
 
     &:focus {
