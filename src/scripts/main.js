@@ -3,65 +3,57 @@ import $ from 'jquery';
 import '../styles/main.scss';
 import './awakeness';
 
-const tiltEffectSettings = {
-  max: 10, // max tilt rotation (degrees (deg))
-  perspective: 3000, // transform perspective, the lower the more extreme the tilt gets (pixels (px))
-  scale: 1.0, // transform scale - 2 = 200%, 1.5 = 150%, etc..
-  speed: 2000, // speed (transition-duration) of the enter/exit transition (milliseconds (ms))
-  easing: 'cubic-bezier(.1,1,1,.99)', // easing (transition-timing-function) of the enter/exit transition
-};
-
-const cards = document.querySelectorAll('.img');
-
-cards.forEach(card => {
-  card.addEventListener('mouseenter', cardMouseEnter);
-  card.addEventListener('mousemove', cardMouseMove);
+$(document).ready(function() {
+  $('a[href^="#"]').on('click', function(event) {
+    var target = $(this.getAttribute('href'));
+    if (target.length) {
+      event.preventDefault();
+      var windowHeight = $(window).height();
+      var targetOffset = target.offset().top;
+      var scrollTo =
+        targetOffset -
+        (windowHeight - Math.min(windowHeight, target.outerHeight())) / 4;
+      $('html, body')
+        .stop()
+        .animate(
+          {
+            scrollTop: scrollTo,
+          },
+          1000
+        );
+    }
+  });
 });
 
-function cardMouseEnter(event) {
-  setTransition(event);
-}
+$(document).ready(function() {
+  // Get all h2 and h3 headings and their corresponding menu items
+  var headings = $('h2, h3, section');
+  var menuItems = $('.sidebar-menu a');
 
-function cardMouseMove(event) {
-  const card = event.currentTarget;
-  const cardWidth = card.offsetWidth;
-  const cardHeight = card.offsetHeight;
-  const centerX = card.offsetLeft + cardWidth / 2;
-  const centerY = card.offsetTop + cardHeight / 2;
-  const mouseX = event.clientX - centerX;
-  const mouseY = event.clientY - centerY;
-  const rotateXUncapped =
-    (+1 * tiltEffectSettings.max * mouseY) / (cardHeight / 2);
-  const rotateYUncapped =
-    (-1 * tiltEffectSettings.max * mouseX) / (cardWidth / 2);
-  const rotateX =
-    rotateXUncapped < -tiltEffectSettings.max
-      ? -tiltEffectSettings.max
-      : rotateXUncapped > tiltEffectSettings.max
-      ? tiltEffectSettings.max
-      : rotateXUncapped;
-  const rotateY =
-    rotateYUncapped < -tiltEffectSettings.max
-      ? -tiltEffectSettings.max
-      : rotateYUncapped > tiltEffectSettings.max
-      ? tiltEffectSettings.max
-      : rotateYUncapped;
+  // Set up scroll listener to update the menu item highlighting
+  $(window).on('scroll', function() {
+    // Get the current scroll position and viewport dimensions
+    var currentPosition = $(this).scrollTop();
+    var viewportTop = $(window).scrollTop();
+    var viewportBottom = viewportTop + $(window).height();
+    var viewportMiddle = viewportTop + $(window).height() / 3;
 
-  card.style.transform = `perspective(${
-    tiltEffectSettings.perspective
-  }px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) 
-                          scale3d(${tiltEffectSettings.scale}, ${
-    tiltEffectSettings.scale
-  }, ${tiltEffectSettings.scale})`;
-}
+    // Loop through the headings to find the one currently in view
+    headings.each(function() {
+      var headingTop = $(this).offset().top;
+      var headingBottom = headingTop + $(this).outerHeight();
 
-function setTransition(event) {
-  const card = event.currentTarget;
-  clearTimeout(card.transitionTimeoutId);
-  card.style.transition = `transform ${tiltEffectSettings.speed}ms ${
-    tiltEffectSettings.easing
-  }`;
-  card.transitionTimeoutId = setTimeout(() => {
-    card.style.transition = '';
-  }, tiltEffectSettings.speed);
-}
+      // Check if the heading is fully visible above the middle of the viewport
+      if (headingTop < viewportMiddle && headingBottom > viewportTop) {
+        // Get the ID of the current heading and highlight its corresponding menu item
+        var currentHeadingId = $(this).attr('id');
+        menuItems.removeClass('active');
+        $('a[href="#' + currentHeadingId + '"]').addClass('active');
+      } else {
+        // If the heading is not in the viewport, remove its corresponding menu item's active class
+        var currentHeadingId = $(this).attr('id');
+        $('a[href="#' + currentHeadingId + '"]').removeClass('active');
+      }
+    });
+  });
+});

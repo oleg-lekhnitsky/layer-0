@@ -206,12 +206,12 @@
   ul {
     li {
       list-style-type: none;
-      padding-left: calc(var(--ids__density) * 0.75em);
+      padding-left: calc(var(--ids__density) * 1em);
 
       &:before {
         position: absolute;
         left: 0;
-        content: '⋅ ';
+        content: '';
       }
     }
 
