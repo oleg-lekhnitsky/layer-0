@@ -4,7 +4,7 @@
   --fluid-screen: 100vw; // шрифт растягивается с этим параметром. если его зафиксировать в пикс, не растягивается
 
   --type-scale-desktop: 1.5; //коэффициент увеличения шрифта десктоп
-  --font-size-min: 16; //размер шрифта мин десктоп
+  --font-size-min: 18; //размер шрифта мин десктоп
   --font-size-max: 20; //размер шрифта макс десктоп
 
   --type-scale-mobile: 1.333; //коэффициент увеличения шрифта телефон
@@ -125,7 +125,7 @@
   h5,
   h6 {
     margin: 0;
-    font-weight: 600;
+    font-weight: 400;
 
     // Стиль зачеркивания заголовков маркером
     mark {
@@ -246,9 +246,9 @@
     margin: 0;
     margin-bottom: calc(var(--ids__density) * 0.75em);
     background: RGB(var(--ids__surface-RGB));
-    padding: calc(var(--ids__density) * 0.75em);
+    padding: calc(var(--ids__density) * 2em);
     padding-right: calc(var(--ids__density) * 2em);
-    border-radius: $ids__radius;
+    border-radius: $ids__radius-XL;
 
     @media screen and #{$ids__mobile} {
       padding-right: calc(var(--ids__density) * 0.75em);
@@ -293,7 +293,8 @@
       margin-top: calc(var(--ids__density) * 0.25em);
       font-size: 0.8em;
       line-height: var(--ids__density);
-      opacity: 0.7;
+      color: rgba(var(--ids__text-RGB), 0.4);
+      padding-left: 1rem;
     }
   }
 
