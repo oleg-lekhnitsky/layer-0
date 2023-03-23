@@ -8,6 +8,8 @@ section {
 
   @media screen and #{$ids__mobile} {
     margin-left: 0;
+    width: 100%;
+    margin: 0;
   }
 }
 
@@ -63,7 +65,8 @@ section {
   .active {
     color: RGB(var(--ids__text-RGB));
     transition: all 300ms ease-out;
-    border-bottom: 1px solid rgba(var(--ids__text-RGB), 0.5);
+
+    opacity: 1;
   }
 
   @media screen and #{$ids__mobile} {
@@ -77,6 +80,7 @@ section {
   }
   li a {
     color: RGB(var(--ids__text-RGB));
+    opacity: 0.5;
     border-bottom: none;
     transition: all 300ms ease-out;
 

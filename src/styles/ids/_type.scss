@@ -252,6 +252,7 @@
 
     @media screen and #{$ids__mobile} {
       padding-right: calc(var(--ids__density) * 0.75em);
+      padding: calc(var(--ids__density) * 1em);
     }
   }
 
